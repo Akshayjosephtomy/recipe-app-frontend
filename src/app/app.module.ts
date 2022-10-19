@@ -6,7 +6,16 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddrecipeComponent } from './addrecipe/addrecipe.component';
 import { ViewallrecipeComponent } from './viewallrecipe/viewallrecipe.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const link:Routes=[
+  {
+    path:"",component:AddrecipeComponent
+  },
+  {
+    path:"view",component:ViewallrecipeComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +25,8 @@ import { ViewallrecipeComponent } from './viewallrecipe/viewallrecipe.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(link)
   ],
   providers: [],
   bootstrap: [AppComponent]
