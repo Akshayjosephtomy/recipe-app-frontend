@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="row my-3">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Recipe Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">category</th>
+                    <th scope="col">Posted Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of recipeData">
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.description}}</td>
+                    <td>{{i.category}}</td>
+                    <td>{{i.date}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
