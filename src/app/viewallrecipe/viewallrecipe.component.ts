@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-viewallrecipe',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewallrecipeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) { 
+    this.fetchData()
+  }
+
+  fetchData=()=>{
+    this.myapi.viewrecipe().subscribe(
+      (data)=>{
+        this.recipeData=data
+      }
+    )
+  }
+
+  recipeData:any=[]
 
   ngOnInit(): void {
   }
